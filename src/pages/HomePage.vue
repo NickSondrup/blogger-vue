@@ -1,7 +1,7 @@
 <template>
   <div class="home container-fluid">
     <div class="row d-flex justify-content-around pt-2 bg-primary">
-      <Blog v-for="b in blogs" :key="b.id" :blog="b" />
+      <Blog v-for="b in blogs" :key="b.id" :blog="b" class="col-lg-5" />
     </div>
   </div>
 </template>
