@@ -12,8 +12,9 @@ import { AppState } from '../AppState'
 export default {
   name: 'Account',
   setup() {
+    const account = computed(() => AppState.account)
     return {
-      account: computed(() => AppState.account)
+      account
     }
   }
 }
