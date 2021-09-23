@@ -3,9 +3,16 @@
     <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == project.creatorId">
       <i class="mdi mdi-close text-danger f-20 selectable" @click="deleteBlog()"></i>
     </div>
-    <div class="card-header">
+    <div class="card-header d-flex flex-column text-center">
+      <div class="row">
+        {{ blog.title }}
+      </div>
+      <div class="row">
+        By: {{ blog.creator.name }}
+      </div>
     </div>
-    <div class="card-body">
+    <div class="card-body text-center">
+      {{ blog.body }}
     </div>
   </div>
 </template>
