@@ -4,6 +4,7 @@
     <div class="card-header row">
       <div class="col-6 d-flex flex-column">
         {{ blog.title }}
+        <br>
         {{ blog.creator.name }}
       </div>
       <div class="col-6">
