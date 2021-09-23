@@ -18,6 +18,13 @@ class BlogsService {
     const res = await api.get(`api/blogs/${blogId}`)
     logger.log('blogsService getBlogById', res)
     AppState.blog = new Blog(res.data)
+    this.getBlogComments(blogId)
+  }
+
+  async getBlogComments(blogId) {
+    AppState.currentComments = []
+    const res = await api.get(`api/blogs/${blogId}/comments`)
+    AppState.currentComments.push(res.data)
   }
 }
 

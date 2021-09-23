@@ -8,7 +8,18 @@
         {{ blog.creator.name }}
       </div>
       <div class="col-6">
-        <img :src="blog.imgUrl" alt="">
+        <img :src="blog.imgUrl" alt="" class="img-fluid">
+      </div>
+    </div>
+    <div class="card-body row text-center">
+      {{ blog.body }}
+    </div>
+    <div class="card-footer">
+      <div v-if="currentComments">
+        <Comments v-for="c in currentComments" :key="c.id" :currentComments="c" />
+      </div>
+      <div v-else>
+        .......Loading Comments...
       </div>
     </div>
   </div>
@@ -22,7 +33,9 @@ import { computed, onMounted } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import { useRoute } from 'vue-router'
 import { blogsService } from '../services/BlogsService.js'
+import Comments from "../components/Comments.vue"
 export default {
+  components: { Comments },
 
   setup() {
     const route = useRoute()
