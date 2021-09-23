@@ -1,19 +1,18 @@
 <template>
   <div>
+    {{ comments.body }}
   </div>
 </template>
 
 <script>
+import { computed } from '@vue/runtime-core'
+import { AppState } from '../AppState'
 export default {
-  props: {
-    comments: {
-      type: String,
-      required: false,
-      default: 'Not Avaliable'
-    }
-  },
   setup() {
-    return {}
+    return {
+      comments: computed(() => AppState.currentComments)
+
+    }
   }
 }
 </script>

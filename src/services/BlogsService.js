@@ -1,5 +1,6 @@
 import { AppState } from '../AppState'
 import { Blog } from '../models/Blog'
+import { Comment } from '../models/Comment'
 import { logger } from '../utils/Logger'
 import { convertToQuery } from '../utils/Query'
 import { api } from './AxiosService'
@@ -24,7 +25,8 @@ class BlogsService {
   async getBlogComments(blogId) {
     AppState.currentComments = []
     const res = await api.get(`api/blogs/${blogId}/comments`)
-    AppState.currentComments.push(res.data)
+    logger.log('blog comments', res)
+    AppState.currentComments = res.data.map(c => new Comment(c))
   }
 }
 

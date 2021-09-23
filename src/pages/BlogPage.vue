@@ -16,7 +16,7 @@
     </div>
     <div class="card-footer">
       <div v-if="currentComments">
-        <Comments v-for="c in currentComments" :key="c.id" :currentComments="c" />
+        <Comments v-for="c in currentComments" :key="c.id" :currentcomments="c" />
       </div>
       <div v-else>
         .......Loading Comments...
