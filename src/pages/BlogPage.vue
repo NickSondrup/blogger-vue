@@ -33,7 +33,7 @@ import { computed, onMounted } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import { useRoute } from 'vue-router'
 import { blogsService } from '../services/BlogsService.js'
-import Comments from "../components/Comments.vue"
+import Comments from '../components/Comments.vue'
 export default {
   components: { Comments },
 
