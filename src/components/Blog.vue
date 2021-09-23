@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == project.creatorId">
+    <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == blog.creatorId">
       <i class="mdi mdi-close text-danger f-20 selectable" @click="deleteBlog()"></i>
     </div>
     <div class="card-header d-flex flex-column text-center">
