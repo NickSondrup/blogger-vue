@@ -1,5 +1,5 @@
 <template>
-  <div class="card col-6">
+  <div class="card col-5 my-2 selectable">
     <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == blog.creatorId">
       <i class="mdi mdi-close text-danger f-20 selectable" @click="deleteBlog()"></i>
     </div>
@@ -11,7 +11,7 @@
         By: {{ blog.creator.name }}
       </div>
     </div>
-    <div class="card-body text-center">
+    <div class="card-body text-center scrollable-y">
       {{ blog.body }}
     </div>
   </div>
@@ -39,5 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.scrollable-y{
+  height: 40vh;
+}
 </style>
