@@ -1,6 +1,15 @@
 <template>
   <div class="card" v-if="blog">
     {{ blog }}
+    <div class="card-header row">
+      <div class="col-6 d-flex flex-column">
+        {{ blog.title }}
+        {{ blog.creator.name }}
+      </div>
+      <div class="col-6">
+        <img :src="blog.imgUrl" alt="">
+      </div>
+    </div>
   </div>
   <div v-else>
     ......loading.....
