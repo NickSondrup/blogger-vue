@@ -1,16 +1,24 @@
 <template>
-  <div class="card ">
-    <Blog :blog="blog" />
+  <div class="card" v-if="blog">
+    {{ blog }}
+  </div>
+  <div v-else>
+    ......loading.....
   </div>
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core'
-import Blog from '../components/Blog.vue'
+import { computed, onMounted } from '@vue/runtime-core'
 import { AppState } from '../AppState'
+import { useRoute } from 'vue-router'
+import { blogsService } from '../services/BlogsService.js'
 export default {
-  components: { Blog },
+
   setup() {
+    const route = useRoute()
+    onMounted(() => {
+      blogsService.getBlogbyId(route.params.blogId)
+    })
     return {
       blog: computed(() => AppState.blog)
     }
