@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ comments.body }}
+    {{ comment.body }}
   </div>
 </template>
 
