@@ -1,6 +1,6 @@
 <template>
   <router-link :to="{name: 'Blog', params: {blogId: blog.id}}" :title="blog.title">
-    <div class="card col-5 my-2 selectable">
+    <div class="card my-2 selectable">
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == blog.creatorId">
         <i class="mdi mdi-close text-danger f-20 selectable" @click="deleteBlog()"></i>
       </div>
