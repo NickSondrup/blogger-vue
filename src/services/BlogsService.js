@@ -10,7 +10,7 @@ class BlogsService {
     logger.log('query', query)
     const res = await api.get('api/blogs' + convertToQuery(query))
     logger.log('porject res', res)
-    AppState.projects = res.data.map(p => new Blog(p))
+    AppState.blogs = res.data.map(p => new Blog(p))
   }
 }
 
