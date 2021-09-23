@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card col-6">
     <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == blog.creatorId">
       <i class="mdi mdi-close text-danger f-20 selectable" @click="deleteBlog()"></i>
     </div>
