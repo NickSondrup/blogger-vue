@@ -1,6 +1,6 @@
 <template>
   <div class="home container-fluid">
-    <div class="row d-flex justify-content-around pt-2 bg-primary">
+    <div class="row justify-content-around pt-2 bg-primary">
       <Blog v-for="b in blogs" :key="b.id" :blog="b" />
     </div>
   </div>

@@ -11,6 +11,7 @@
         By: {{ blog.creator.name }}
       </div>
     </div>
+    <img :src="blog.imgUrl" alt="">
     <div class="card-body text-center scrollable-y">
       {{ blog.body }}
     </div>
@@ -41,5 +42,8 @@ export default {
 <style lang="scss" scoped>
 .scrollable-y{
   height: 40vh;
+}
+.img{
+  height: 500px;
 }
 </style>
