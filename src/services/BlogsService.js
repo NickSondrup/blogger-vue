@@ -8,7 +8,7 @@ class BlogsService {
   async getBlogs(query = {}) {
     AppState.blogs = []
     logger.log('query', query)
-    const res = await api.get('api/projects' + convertToQuery(query))
+    const res = await api.get('api/blogs' + convertToQuery(query))
     logger.log('porject res', res)
     AppState.projects = res.data.map(p => new Blog(p))
   }
